@@ -19,7 +19,6 @@ export default function MovieModal(){
     const [genres, setGenres] = React.useState();
     const [runtime, setRuntime] = React.useState(0);
     const [cast, setCast] = React.useState()
-    const [watchProviders, setWatchProviders] = React.useState([]);
 
     const [flipped, setFlipped] = React.useState(false);
 
@@ -43,11 +42,6 @@ export default function MovieModal(){
                     return <CastTile key={i} person={person}/>
                 }));
 
-            });
-        API.get(`/movie/${movieId}/watch/providers`)
-            .then(response => {
-                const data = response.data.results.US.flatrate.slice(0,5);
-                setWatchProviders(data.map(movieProvider => <MovieProvider key={movieProvider.provider_id} movieProvider={movieProvider}/>));
             });
     }, [movieId]);
 
@@ -140,16 +134,7 @@ export default function MovieModal(){
                                         {runtime}
                                     </h4>
                                 }
-                                { watchProviders.length > 0 &&
-                                    <div className="flex flex-col gap-1.5 ">
-                                        <h4 className="text-sm text-neutral-300 line-clamp-6">
-                                            <strong>Watch Providers: </strong>
-                                        </h4>
-                                        <div className="flex ">
-                                            {watchProviders}
-                                        </div>
-                                    </div>
-                                }
+                                
                             </div>
                         </div>
                     </div>

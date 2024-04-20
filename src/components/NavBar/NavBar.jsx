@@ -23,7 +23,7 @@ export default function NavBar(){
     return(
         <div className="p-4 drop-shadow-xl flex bg-neutral-800 sticky top-0 z-40 w-screen">
             <div className="flex items-center gap-1.5 cursor-pointer">
-                <img className="h-7" src="https://i.imgur.com/aeUnzDa.png"/>
+                <img className="h-7" src="https://pbs.twimg.com/profile_images/1674562292586012673/avGDzo8C_400x400.jpg"/>
             </div>
             <form className="relative flex w-1/2  ml-10" ref={ref}>
                 <input

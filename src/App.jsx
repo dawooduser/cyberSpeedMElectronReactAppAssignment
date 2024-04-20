@@ -18,7 +18,6 @@ function App() {
             <div className="flex flex-col">
                 <NavBar/>
                 <div className="flex h-fit">
-                    <SideBar/>
                     <Content/>
                 </div>
             </div>
